@@ -142,7 +142,7 @@ def train_mt_model(nov_df, nov_eval_df, val_df, val_eval_df, output_path, model_
             
 def train_model(df, eval_df, output_path, model_name, num_epochs=3, train_batch_size=16, model_suffix='', \
                 data_file_suffix='', max_seq_length=256, 
-                special_tokens=[], loss='Triplet', sentence_transformer=False, evaluation_steps=5):
+                special_tokens=[], loss='Triplet', sentence_transformer=False, evaluation_steps=5, lr=5e-06):
     
     output_path = output_path + model_name+ "-" + model_suffix + "-"+datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
@@ -199,7 +199,7 @@ def train_model(df, eval_df, output_path, model_name, num_epochs=3, train_batch_
               epochs=num_epochs,
               save_best_model=True,
               checkpoint_save_steps=evaluation_steps,
-              optimizer_params={'lr':5e-06},
+              optimizer_params={'lr':lr},
               checkpoint_save_total_limit=3,
               evaluation_steps=evaluation_steps,
               warmup_steps=warmup_steps,
