@@ -26,16 +26,16 @@ Given a premise and a conclusion in natural language, the task is to predict:
 
 Hence, we expect two binary decisions as output.
 
-#### Example: US health care reform
+#### Example: Vegetarism
 
-Premise: There is a lot to like in the bill. The Congressional Budget Office estimates that it would cover more than 30 million of the uninsured and would, by 2019, result in 94 percent of all citizens and legal residents below Medicare age having health insurance. That is a big improvement from the current 83 percent.
+Premise: The notion of man's dominion over animals need not be thought of as a blank check for man to exploit animals. Indeed, it may be appropriate to connect the notion of "dominion" to stewardship" over animals. Yet, humans can be good stewards of animals while continuing to eat them. It is merely necessary that humans maintain balance, order, and sustainability in the animal kingdom. But, again, this does not require the abandonment of meat-eating.
 
 | **Conclusion** | **Validity** | **Novelty** |
 |------------|----------|---------|
-| Health care reform is still valuable without public option | no | no |
-| The bill would cover more than 30 million of the uninsured people | yes | no |
-| Health insurance mandates are a welcome boost | no | yes |
-| Health care reform is good for the uninsured | yes | yes |
+| Two-party systems are more stable | no | no |
+| Man's "dominion" over animals does not imply abandoning meat. | yes | no |
+| The idea of "domiminism" is unnecessary. | no | yes |
+| Dominion over animals can and should be used responsibly | yes | yes |
 
 #### Datasets & Evaluation
 
@@ -45,6 +45,8 @@ Please read the [Data Description](https://github.com/phhei/ArgsValidNovel/blob/
   - you're allowed to extend the train set with further (synthetic) samples. However, if you do that, you have to describe/ provide the algorithm which extends the training set. This algorithm must be automatically executable without any human interaction (hence, without further manual annotation/ manual user feedback)
 - Dev: [here](https://github.com/phhei/ArgsValidNovel/blob/gh-pages/TaskA_dev.csv)
 - Test: _coming soon_ (01.08.22)
+
+**Evaluation:** we consider the _f1_macro_-score calculated by the Python-method [here](https://github.com/phhei/ArgsValidNovel/blob/gh-pages/eval-metric.py). The (predicted) values for validity and novelty can be continuous. In any case, the values for validity and novelty must be in the range of 0 (aspect not fulfilled) to 1 (aspect fulfilled).
 
 ### Subtask B: recognizing relative validity / novelty
 
@@ -72,6 +74,14 @@ Please read the [Data Description](https://github.com/phhei/ArgsValidNovel/blob/
   - you're allowed to extend the train set with further (synthetic) samples. However, if you do that, you have to describe/ provide the algorithm which extends the training set. This algorithm must be automatically executable without any human interaction (hence, without further manual annotation/ manual user feedback)
 - Dev: [here](https://github.com/phhei/ArgsValidNovel/blob/gh-pages/TaskB_dev.csv)
 - Test: _coming soon_ (01.08.22)
+
+**Evaluation:** We require follwing format for each instance for each aspect (validity/ novelty).
+
+- -1: A>B: Conclusion A is more (valid/ novel)
+- 0: A=B: Conclusion A and B are equalliy valid/ novel
+- 1: A<B: Conclusion B is more  (valid/ novel)
+
+We consider the _f1_macro_-score averaging the _f1_-score of all 3x3 classes ((-1, -1), (-1, 0), (-1, 1), (0, -1), ..., (1, 1)).
 
 ---
 
