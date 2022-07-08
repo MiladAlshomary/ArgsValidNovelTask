@@ -1,0 +1,33 @@
+scores: F1
+
+validity
+    NLI (inference) 
+        '[CLS] premise [SEP] conclusion [SEP]'              .6144
+        '[CLS] topic [SEP] premise [SEP] conclusion [SEP]'  .7635
+        '[CLS] topic:premise [SEP] conclusion [SEP]'        .7718
+    NLI /w fine-tuning
+        '[CLS] premise [SEP] conclusion [SEP]'              (.7875)
+        '[CLS] topic [SEP] premise [SEP] conclusion [SEP]'  (.7973)
+        '[CLS] topic:premise [SEP] conclusion [SEP]'        .8407
+    BERT /w fine-tuning
+        '[CLS] premise [SEP] conclusion [SEP]'              .7638
+        '[CLS] topic [SEP] premise [SEP] conclusion [SEP]'  .7918 *
+        '[CLS] topic:premise [SEP] conclusion [SEP]'        .6672
+    SBERT 
+        /w RoBERTa-NLI                                      .8215
+        /w BERT                                             .7837
+    
+
+
+novelty
+    NLI /w fine-tuning
+        '[CLS] premise [SEP] conclusion [SEP]'              (.3107)
+        '[CLS] topic [SEP] premise [SEP] conclusion [SEP]'  (.3962)
+        '[CLS] topic:premise [SEP] conclusion [SEP]'        .7986
+    BERT /w fine-tuning
+        '[CLS] premise [SEP] conclusion [SEP]'              .0476
+        '[CLS] topic [SEP] premise [SEP] conclusion [SEP]'  .0000
+        '[CLS] topic:premise [SEP] conclusion [SEP]'        .0000
+    SBERT 
+        /w RoBERTa-NLI                                      .5912
+        /w BERT                                             .5934
