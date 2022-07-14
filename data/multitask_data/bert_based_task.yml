@@ -15,7 +15,7 @@ TaskA:
   model_type: BERT
   task_type: SingleSenClassification
   class_weights:
-      - 0.4
+      - 0.8
       - 0.2
 TaskB: 
   config_name: bert-base-uncased
