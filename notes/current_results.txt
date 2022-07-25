@@ -31,3 +31,15 @@ novelty
     SBERT 
         /w RoBERTa-NLI                                      .5912
         /w BERT                                             .5934
+        
+        
+
+-----------------------
+
+Approach                    Novelty Validity
+
+Single-nov-no-weighting     0.547   -
+Single-nov-with-weighting   0.547   -
+----
+Single-val-no-weighting     -       0.72
+Multitask                   0.618   0.698

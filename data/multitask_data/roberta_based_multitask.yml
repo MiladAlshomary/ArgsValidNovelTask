@@ -1,6 +1,6 @@
 --- 
-TaskA: 
-  config_name: bert-base-uncased
+NoveltyTask: 
+  config_name: roberta-large
   dropout_prob: 0.2
   file_names: 
     - novelty_training_df.tsv
@@ -12,13 +12,13 @@ TaskA:
   loss_type: CrossEntropyLoss
   metrics: 
     - classification_f1_score
-  model_type: BERT
+  model_type: ROBERTA
   task_type: SingleSenClassification
-  class_weights:
-      - 0.8
-      - 0.2
-TaskB: 
-  config_name: bert-base-uncased
+#  class_weights:
+#      - 2.0
+#      - 1.0
+ValidityTask: 
+  config_name: roberta-large
   dropout_prob: 0.2
   file_names: 
     - validity_training_df.tsv
@@ -31,5 +31,5 @@ TaskB:
   loss_type: CrossEntropyLoss
   metrics: 
     - classification_f1_score
-  model_type: BERT
+  model_type: ROBERTA
   task_type: SingleSenClassification

@@ -1,5 +1,5 @@
 --- 
-TaskA: 
+NoveltyTask: 
   config_name: roberta-large-mnli
   dropout_prob: 0.2
   file_names: 
@@ -14,10 +14,10 @@ TaskA:
     - classification_f1_score
   model_type: ROBERTA
   task_type: SingleSenClassification
-  class_weights:
-      - 0.8
-      - 0.2
-TaskB: 
+#  class_weights:
+#      - 2.0
+#      - 1.0
+ValidityTask: 
   config_name: roberta-large-mnli
   dropout_prob: 0.2
   file_names: 
