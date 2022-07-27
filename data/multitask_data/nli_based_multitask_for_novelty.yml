@@ -1,0 +1,37 @@
+--- 
+NoveltyTask: 
+  config_name: roberta-large-mnli
+  dropout_prob: 0.3
+  loss_weight: 1.0
+  file_names: 
+    - novelty_training_df.tsv
+    - novelty_valid_df.tsv
+    - novelty_test_df.tsv
+  label_map_or_file: 
+    - conservative
+    - novel
+  loss_type: CrossEntropyLoss
+  metrics: 
+    - classification_f1_score
+  model_type: ROBERTA
+  task_type: SingleSenClassification
+#  class_weights:
+#      - 2.0
+#      - 1.0
+ValidityTask: 
+  config_name: roberta-large-mnli
+  dropout_prob: 0.3
+  loss_weight: 0.7
+  file_names: 
+    - validity_training_df.tsv
+    - validity_valid_df.tsv
+    - validity_test_df.tsv
+  label_map_or_file: 
+    - invalid
+    - valid
+  class_num: 2
+  loss_type: CrossEntropyLoss
+  metrics: 
+    - classification_f1_score
+  model_type: ROBERTA
+  task_type: SingleSenClassification
