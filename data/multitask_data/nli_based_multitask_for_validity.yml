@@ -2,7 +2,7 @@
 NoveltyTask: 
   config_name: roberta-large-mnli
   dropout_prob: 0.3
-  loss_weight: 0.75
+  loss_weight: 0.9
   file_names: 
     - novelty_training_df.tsv
     - novelty_valid_df.tsv
