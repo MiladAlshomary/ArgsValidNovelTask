@@ -23,7 +23,7 @@ python ../../multi-task-NLP/train.py \
   --eval_batch_size 8 \
   --grad_accumulation_steps 1 \
   --max_seq_len 512 \
-  --log_per_updates 100 \
+  --log_per_updates 50 \
   --log_dir $4 \
   --limit_save 5\
   --eval_while_train\

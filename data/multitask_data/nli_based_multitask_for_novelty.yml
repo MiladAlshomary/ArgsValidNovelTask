@@ -10,6 +10,7 @@ NoveltyTask:
   label_map_or_file: 
     - conservative
     - novel
+  class_num: 2
   loss_type: CrossEntropyLoss
   metrics: 
     - classification_f1_score
