@@ -15,14 +15,14 @@ echo "$2$5"
 python ../../multi-task-NLP/train.py \
   --data_dir "$2$5" \
   --task_file $1 \
-  --learning_rate 5e-8 \
+  --learning_rate $6 \
   --out_dir $3 \
-  --epochs 10 \
+  --epochs $7 \
   --train_batch_size 8 \
   --eval_batch_size 8 \
   --grad_accumulation_steps 1 \
   --max_seq_len 512 \
-  --log_per_updates 100 \
+  --log_per_updates 50 \
   --log_dir $4 \
   --limit_save 5\
   --eval_while_train\

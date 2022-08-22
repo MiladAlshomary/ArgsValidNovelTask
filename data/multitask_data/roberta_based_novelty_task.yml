@@ -1,19 +1,17 @@
 --- 
 NoveltyTask: 
   config_name: roberta-large
-  dropout_prob: 0.2
+  dropout_prob: 0.3
   file_names: 
-    - novelty_training_df.tsv
+    - novelty_training_balanced_df.tsv
     - novelty_valid_df.tsv
     - novelty_test_df.tsv
   label_map_or_file: 
     - conservative
     - novel
+  class_num: 2
   loss_type: CrossEntropyLoss
   metrics: 
     - classification_f1_score
   model_type: ROBERTA
   task_type: SingleSenClassification
-#  class_weights:
-#      - 2.0
-#      - 1.0
