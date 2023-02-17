@@ -3,7 +3,7 @@ NoveltyTask:
   config_name: roberta-large
   dropout_prob: 0.3
   file_names: 
-    - novelty_training_df.tsv
+    - novelty_training_balanced_df.tsv
     - novelty_valid_df.tsv
     - novelty_test_df.tsv
   label_map_or_file: 

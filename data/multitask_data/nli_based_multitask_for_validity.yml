@@ -4,7 +4,7 @@ NoveltyTask:
   dropout_prob: 0.3
   loss_weight: 0.9
   file_names: 
-    - novelty_training_df.tsv
+    - novelty_training_balanced_df.tsv
     - novelty_valid_df.tsv
     - novelty_test_df.tsv
   label_map_or_file: 
